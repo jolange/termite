@@ -1788,16 +1788,16 @@ int main(int argc, char **argv) {
     }
 
     if (title) {
-        info.config.dynamic_title = FALSE;
+        info.config.dynamic_title = FALSE;  // TODO don't do that. Make the next else an "if dyn_title"
         gtk_window_set_title(GTK_WINDOW(window), title);
         g_free(title);
     } else {
         g_signal_connect(vte, "window-title-changed", G_CALLBACK(window_title_cb),
                          &info.config.dynamic_title);
         if (execute) {
-            gtk_window_set_title(GTK_WINDOW(window), execute);
+            gtk_window_set_title(GTK_WINDOW(window), execute); // TODO need to pass title here
         } else {
-            window_title_cb(vte, &info.config.dynamic_title);
+            window_title_cb(vte, &info.config.dynamic_title);  // TODO and here
         }
     }
 
