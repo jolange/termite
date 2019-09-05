@@ -211,3 +211,6 @@ On other systems:
 
     wget https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo
     tic -x termite.terminfo
+
+compile at work:
+PKG_CONFIG_PATH="$HOME/compile/termite_with_vte-ng_from-arch/src/vte-static/lib/pkgconfig" make
